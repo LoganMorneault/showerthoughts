@@ -30,3 +30,5 @@ This repo contains a  setup for spinning up 3 Docker containers:
 4. Click `Generate Key` and navigate through the next menu.
     - Because you're not pushing, you don't need to worry about generating a key.
 5. Enjoy ShowerThoughts :D
+
+https://www.youtube.com/watch?v=PhUKXCIO9jA

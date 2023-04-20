@@ -10,8 +10,6 @@ This repo contains a  setup for spinning up 3 Docker containers:
 1. A Python Flask container, `web`
 1. A Local AppSmith Server, `appsmith`
 
----
-
 ## How to setup and start the containers
 
 **Important** - you need Docker Desktop installed
@@ -22,8 +20,6 @@ This repo contains a  setup for spinning up 3 Docker containers:
 4. In a terminal or command prompt, navigate to the folder with the `docker-compose.yml` file.  
 5. Build the images with `docker compose build`
 6. Start the containers with `docker compose up`.  To run in detached mode, run `docker compose up -d`.
-
----
 
 ## How to setup the AppSmith Site
 

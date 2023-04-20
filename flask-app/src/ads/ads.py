@@ -1,5 +1,6 @@
 from flask import Blueprint, request, Response
 from src.utils import sql_to_json, execute_sql
+import datetime
 
 
 # how many cents an ad view earns
@@ -38,16 +39,19 @@ def get_campaigns() -> Response:
 def create_campaign() -> Response:
     """Create an ad campaign."""
     try:
-        advertiser_id = request.form['advertiser_id']
-        title = request.form['title']
-        cost = request.form['cost']
-        start_date = request.form['start_date']
-        end_date = request.form['end_date']
-
+        data = request.get_json()
+        print(data)
+        advertiser_id = data['advertiser_id']
+        title = data['title']
+        cost = data['cost']
+        start_date = data['start_date']
+        end_date = data['end_date']
+    
         create = f'''
-            INSERT INTO AdCampaign (AdvertiserID, Title, Cost, StartDate, EndDate) VALUES
-            ({advertiser_id}, "{title}", {cost}, "{start_date}", "{end_date}");
+        INSERT INTO AdCampaign (AdvertiserID, Title, Cost, StartDate, EndDate) VALUES
+        ({advertiser_id}, '{title}', {cost}, '{start_date}', '{end_date}');
         '''
+
         execute_sql(create)
 
         return ('Success', 200)
